@@ -98,9 +98,25 @@ Keyword 1, Keyword 2, \dots, Keyword N.
 
 \section{Introduction}\label{introduction}
 This template is intended to ease some workload related to the formatting, debugging, writing, as well as to ensure a professional and good-looking article. 
+It is intended mainly for IEEE conferences.
+However, the packages and macros can be included in other journal templates.
 
+This template is available in a public repository in GitHub (\href{https://github.com/EstebanJGC/IEEE-Conference-Template---GZ.git}{\blue{Here}}).
+Any future update will be reported there.
 
 \section{Figures and Tables}
+\subsection{Figures}
+Refer to the README.tex file within figures folder.
+
+When you have images in PDF or similar vector format, the text presented in the image (PDF format) could not be embedded.
+This depends on which software/tool was used to generate the figure and how the figure was exported from such a software/tool.
+Therefore, when you check (through PDF eXpress in case of IEEE conferences) your final files will get an error.
+To deal with this, a quick solution is to use the ``latexmkrc'' file, which is in charge of embed all the fonts.
+To know more about ``latexmkrc'' with overleaf refer to \href{https://www.overleaf.com/learn/latex/Articles/How_to_use_latexmkrc_with_Overleaf}{\blue{How to use latexmkrc with Overleaf}}
+
+
+\subsection{Tables}
+Refer to the README.tex file within tables folder.
 
 
 \section{References}
@@ -110,22 +126,34 @@ Go to Google Scholar and look for the desired reference.
 Under the title of the reference look for ``cite'' option and select the bibTex file.
 
 An example as follows:\\
-    % \@article{garzon2022embedded,\\
-    % AUTHOR = {Garzón, Esteban and Teman, Adam and Lanuzza, Marco},\\
-    % TITLE = {{Embedded Memories for Cryogenic Applications}},\\
-    % JOURNAL = {Electronics},\\
-    % VOLUME = {11},\\
-    % YEAR = {2022},\\
-    % NUMBER = {1},\\
-    % ARTICLE-NUMBER = {61},\\
-    % ISSN = {2079-9292},\\
-    % DOI = {10.3390/electronics11010061}}\\
-    
-Note that the title option above has double parenthesis. This is a MUST in order to show the title ``as is'', i.e., the capital letters (when written) are shown.
 
+@article\{garzon2021gain,
+
+  title=\{\{Gain-Cell Embedded DRAM Under Cryogenic Operation--A First Study\}\},
+  
+  author=\{Garz{\'o}n, Esteban and Greenblatt, Yosi and Harel, Odem and Lanuzza, Marco and Teman, Adam\},
+  
+  journal=\{IEEE Transactions on Very Large Scale Integration (VLSI) Systems\},
+  
+  year=\{2021\},
+  
+  publisher=\{IEEE\}
+\}
+    
+Note that the title option above has double parenthesis.
+This is a MUST in order to show the title ``as is'', i.e., the capital letters (when written) are shown.
+Ensure that the year of publication is correct.
+Sometimes, google scholar takes the year of publication when the article was added online, and not when the actual publisher upload the final article within an special issue, volume, etc.
+Therefore, the year of publication should be taken from the journal web-page.
+
+Another alternative to get the .bib file is to go to the journal web-page and look for the export citation option.
+Afterwards, select BibTeX option. 
+
+\subsection{Manipulating References Format}
 Another useful hack is to use the ``filecontents'' package to manipulate the references of your article. 
 This can help you to save a lot of space.
-You can force \textit{et al.} after one or $n$ authors. Or simply get rid of the ugly dash line when two consecutive references, by the same authors, are presented. 
+You can force \textit{et al.} after one or $n$ authors. 
+Or simply get rid of the ugly dash line when two consecutive references, by the same authors, are presented. 
 To properly use this package have to do the following:
 \begin{enumerate}
     \item Define the package (see line 33 of the source file of this document).
@@ -150,22 +178,6 @@ The options are presented as follows:
 
 
 \IEEEpubidadjcol
-
-
-
-\section{Section}\label{sec:two}
-
-
-
-
-
-
-%\input{tables/table1} % Example of calling a table
-
-
-
-
-
 
 
 \section{Conclusions}\label{sec:conclusions}
