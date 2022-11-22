@@ -1,0 +1,23 @@
+%===========================================%
+% Tables
+%===========================================%
+%   -> Two options: pdf (IEEE journals accept tables in PDF format), or latex-based table (some journals like mdpi dont accept tables in PDF)
+%   -> To help the writer, we suggest to create tables in separate ".tex" files in a separate folder, and then, when needed, call them within the manuscript as follows:
+%       "\input{tables/<Table_Name>}"
+
+
+%================= Option  1 ===============%
+%     \begin{table}[b] % [b]-> bottom, [t]->top, [H]->Here! ([h!] should do a better job), {figure*}->float 
+%         \centering
+%         \caption{My caption}
+%             \includegraphics[width=0.5\textwidth]{tables/table1.pdf}
+%         \label{tab:MyLabel}
+%     \end{table}
+%===========================================%
+    
+%================= Option  2 ===============%
+% use https://www.tablesgenerator.com/latex_tables
+
+% \setlength\extrarowheight{1pt} --> increase the height in the cells. This will show the text better
+% \setlength{\tabcolsep}{1pt} --> to fit better the text in the table cell. this will get rid of the ugly spacein the cell
+%===========================================%

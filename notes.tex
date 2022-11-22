@@ -1,0 +1,33 @@
+%we evaluate the energy and performance benefits of using \dmtj devices with relaxed non-volatility (i.e., by reducing cross-section area of the device), while still maintaining stable states at 77\K.
+
+
+%we show that, thanks to the non-volatility of the \dmtj properly tuned for cryogenic operation, the \dmtj-based \sttmram operating at 77\K proves to be more energy-efficient than conventional \sixtsram under both read and write operations by 56\% and 37\%, respectively (on average over the considered memory capacity range).
+
+
+%the most area- and energy-efficient solution is the one-transistor one-\dmtj (1T1DMTJ) in standard connection (1T1DMTJ-SC)\footnote{In 1T1DMTJ-SC topology the access transistor is connected to the \rlt.} as shown in \figref{fig:sttmram_cell}.
+%The write operation is done by asserting the access transistor, and driven an electrical current from the \bl to the \sln, or vice versa, as shown with the red/blue arrows in \figref{fig:sttmram_cell}.
+%As for read operation, we consider a voltage sensing scheme, where a read current is sent from the \bl, while the \sln is grounded.
+
+%\red{While the CMOS process variations were taken into account by using the statistical models provided by the \pdk, the DMTJ manufacturing uncertainty was modeled in our Verilog-A compact model by defining the variability ($\sigma/\mu$) of some process parameters, whose variations are assumed to follow a Gaussian distribution.} %published version
+
+
+%However, despite the fact that the considered bitcells present small \Vsm, this issue can be addressed by employing different approaches~\cite{Trinh2018dynamic}.
+
+% From \figref{fig:latency_results}(a), the STT-MRAM based on 13\nm \dmtj devices exhibits increased read latency by 2.3\X and 2.1\X (averaged over the considered memory capacity range) as compared to the 40\nm DMTJ-based STT-MRAM and the \sixtsram, respectively.
+% %This is in agreement with the lower \Iread
+
+% ENERGY
+% As shown in \figref{fig:energy_results}(a)-(b), using 13\nm \dmtj devices also allows the STT-MRAM to outperform the \sixtsram in terms of dynamic energy consumption under both read/write accesses.
+% From \figref{fig:energy_results}(a), the two STT-MRAM implementations show comparable read energy with a reduction of more than 50\% (56\% for the 13\nm DMTJ-based STT-MRAM) on average than the \sixtsram.
+% In addition, from \figref{fig:energy_results}(b), the 13\nm DMTJ-based STT-MRAM halves write energy as compared to the 40\nm DMTJ-based memory, thus ensuring energy savings of --37\% on average with respect to the \sixtsram.
+% Looking at the leakage power shown in the inset of \figref{fig:energy_results}(b), the two STT-MRAM implementations exhibit similar static power consumption, which is 98\% lower than the \sixtsram.
+
+
+% Conclusions
+% In this work, a solution to build reliable, energy-efficient, and high-density \sttmrams operating at cryogenic conditions (77\K) has been proven.
+% It consists of using \dmtj devices to exploit their reduced switching currents, while relaxing their non-volatility requirement at room temperature (i.e., by reducing the cross-section area) and maintaining the typical 10-years retention time at 77\K.
+% Our simulation study has been performed at bitcell-level and memory architecture-level by using a commercial 65\nm CMOS technology calibrated down to 77\K under silicon measurements and a macrospin-based \dmtj Verilog-A compact model. 
+% As the main contribution of our work, obtained results have shown that shrinking the DMTJ cell size (i.e., relaxing its retention time at room temperature) allows improved performance and energy consumption under write access at 77\K. 
+% This makes \dmtj-based \sttmram operating at 77\K more energy-efficient for both read/write operations than conventional \sixtsram, at the only cost of worsened read access time. 
+% 
+

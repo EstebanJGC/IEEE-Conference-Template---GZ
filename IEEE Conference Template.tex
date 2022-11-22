@@ -1,0 +1,190 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+% \makeatletter
+% \def\ps@IEEEtitlepagestyle{%
+% 	\def\@oddfoot{\mycopyrightnotice}%
+% 	\def\@evenfoot{}%
+% }
+% \def\mycopyrightnotice{%
+% 	{\hfill \footnotesize 978-1-6654-4141-4/21/\$31.00 \copyright 2021 IEEE\hfill}
+% }
+% \makeatother 
+    
+\input{common/authors.tex}
+\input{common/enics_packages.tex}
+\input{common/macros.tex}
+\input{common/glossary.tex}
+\input{common/variables_and_symbols.tex}
+\input{common/units.tex}
+\input{common/ORCID_Logo.tex}
+
+%\usepackage{xspace}
+%\usepackage[detect-weight=true, binary-units=true]{siunitx}
+\usepackage{filecontents} % To make the bib-file (see https://tex.stackexchange.com/questions/164017/limiting-the-number-of-authors-in-the-references-with-ieeetran/164513)
+
+\begin{filecontents}{\jobname.bib}
+    @IEEEtranBSTCTL{IEEEexample:BSTcontrol,
+      CTLuse_forced_etal       = "yes",
+      CTLmax_names_forced_etal = "9", 
+      CTLnames_show_etal       = "8", 
+      CTLdash_repeated_names = "no" 
+    }
+\end{filecontents}
+
+\begin{document}
+\bstctlcite{IEEEexample:BSTcontrol} % To control "et al." in bib-file
+\title{IEEE Conference Template -- \LaTeX\,\,Macros and Packages 
+%}
+\thanks{
+\textbf{Option 1 (One sponsor):} This work was supported by the \textit{``ENTITY-1''} under the \textit{``Project/Grant Name/Number''}.
+\textbf{Option 2 (More than one sponsor):} This work was partially supported by the \textit{``ENTITY-1} under the Project/Grant Name/Number, and by the \textit{``ENTITY-2''} Foundation under \textit{``Project/Grant Name/Number''}
+} % END "thanks"
+
+}
+
+%==== Author block - option 1 ======%
+% \author{
+%         Esteban~Garzón$^{1,2}$, 
+%         Author 2, and
+%         Author 3
+%         \\
+%         \normalsize $^{1}$\,Affiliation 1.\\
+%         Email: email author\\
+%         $^{2}$\,Affiliation 2.\\
+%         Email: email author\\
+%         %\vspace{-0mm}
+% }
+%====================================%
+
+%==== Author block - option 2 ======%
+\author{
+    \IEEEauthorblockN{
+        Esteban Garzón \IEEEauthorrefmark{1}\IEEEauthorrefmark{2},
+        Author 2 \IEEEauthorrefmark{3},
+        Author 3 \IEEEauthorrefmark{3}
+    }
+    \IEEEauthorblockA{\IEEEauthorrefmark{1}\,Affiliation 1\\
+    \IEEEauthorrefmark{2}\,Affiliation 2\\
+    \IEEEauthorrefmark{3}\,Affiliation 3
+    }
+}
+%====================================%
+
+%\IEEEpubid{978-1-4673-9563-2/15/\$31.00 ©2015 IEEE}
+%\IEEEpubid{0000--0000/00\$31.00 \copyright\ 2022 IEEE}
+
+\maketitle
+
+\begin{abstract}
+This is a brief description of some Packages and Macros useful to write articles with IEEE template.
+These packages are usually used to publish our works to IEEE conferences or journals.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Keyword 1, Keyword 2, \dots, Keyword N.
+\end{IEEEkeywords}
+
+
+
+\section{Introduction}\label{introduction}
+This template is intended to ease some workload related to the formatting, debugging, writing, as well as to ensure a professional and good-looking article. 
+
+
+\section{Figures and Tables}
+
+
+\section{References}
+The references have to be placed in a separate ``.bib'' file (see ``references.bib'' file), and to cite it, you simply have to use cite command: \arraybackslash \\cite\{garzon2022embedded\} (e.g.,~\cite{garzon2021gain}).
+It is suggested to properly extract bibTex of the references as follows.
+Go to Google Scholar and look for the desired reference. 
+Under the title of the reference look for ``cite'' option and select the bibTex file.
+
+An example as follows:\\
+    % \@article{garzon2022embedded,\\
+    % AUTHOR = {Garzón, Esteban and Teman, Adam and Lanuzza, Marco},\\
+    % TITLE = {{Embedded Memories for Cryogenic Applications}},\\
+    % JOURNAL = {Electronics},\\
+    % VOLUME = {11},\\
+    % YEAR = {2022},\\
+    % NUMBER = {1},\\
+    % ARTICLE-NUMBER = {61},\\
+    % ISSN = {2079-9292},\\
+    % DOI = {10.3390/electronics11010061}}\\
+    
+Note that the title option above has double parenthesis. This is a MUST in order to show the title ``as is'', i.e., the capital letters (when written) are shown.
+
+Another useful hack is to use the ``filecontents'' package to manipulate the references of your article. 
+This can help you to save a lot of space.
+You can force \textit{et al.} after one or $n$ authors. Or simply get rid of the ugly dash line when two consecutive references, by the same authors, are presented. 
+To properly use this package have to do the following:
+\begin{enumerate}
+    \item Define the package (see line 33 of the source file of this document).
+    \item After calling the package, define the filecontents block. 
+    This can be seen in line 35 of the source file of this document.
+    \item Below begin document definition, the block created in previous step has to be called (see line 48).
+    \item Finally, when defining the reference file, you have to include the ``filecontents'' name of your sub-file, ``jobname'' in this article.
+    See the definition in the bibliography section at the end of this source file. 
+\end{enumerate}
+
+The filecontents block mainly present four options, which can be commented if needed.
+The options are presented as follows:
+\begin{itemize}
+    \item CTLuse\_forced\_etal: It enables the ``et al.'' option 
+    \item CTLmax\_names\_forced\_etal: If the number of authors is greater than this number, we will force (if enabled) et al.
+    \item CTLnames\_show\_etal: Names to show after et al.
+    \item CTLdash\_repeated\_names: This is useful when you are citing two consecutive articles with the same authors.
+    In such a case, by default, while the first citation will contain all authors, the next citation (again, with the same authors) will be shown with a dash line instead of the authors' names.
+\end{itemize}
+
+
+
+
+\IEEEpubidadjcol
+
+
+
+\section{Section}\label{sec:two}
+
+
+
+
+
+
+%\input{tables/table1} % Example of calling a table
+
+
+
+
+
+
+
+\section{Conclusions}\label{sec:conclusions}
+In this brief, we presented how to use homemade packages to write articles.
+The above information is intended to be a guide, you are encouraged to extend the packages as you want.
+All the packages are free to use.
+Have a good writing! 
+
+
+\section*{Acknowledgment}
+Commented if not needed. The sponsor is on the first page
+%The preferred spelling of the word ``acknowledgment'' in America is without 
+%an ``e'' after the ``g''. Avoid the stilted expression ``one of us (R. B. 
+%G.) thanks $\ldots$''. Instead, try ``R. B. G. thanks$\ldots$''. Put sponsor 
+%acknowledgments in the unnumbered footnote on the first page.
+
+
+%\section*{References}
+\bibliographystyle{IEEEtran}
+\bibliography{references.bib,\jobname}
+
+\end{document}
