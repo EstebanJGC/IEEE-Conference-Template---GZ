@@ -24,7 +24,7 @@
 \input{common/enics_packages.tex}
 \input{common/macros.tex}
 \input{common/glossary.tex}
-\input{common/variables_and_symbols.tex}
+\input{common/inputVariables.tex}
 \input{common/units.tex}
 \input{common/ORCID_Logo.tex}
 
@@ -43,7 +43,7 @@
 
 \begin{document}
 \bstctlcite{IEEEexample:BSTcontrol} % To control "et al." in bib-file
-\title{IEEE Conference Template -- \LaTeX\,\,Macros and Packages 
+\title{IEEE Conference Template -- \LaTeX\,\,Macros and Packages For a Good-Looking Article
 %}
 \thanks{
 \textbf{Option 1 (One sponsor):} This work was supported by the \textit{``ENTITY-1''} under the \textit{``Project/Grant Name/Number''}.
@@ -86,8 +86,8 @@
 \maketitle
 
 \begin{abstract}
-This is a brief description of some Packages and Macros useful to write articles with IEEE template.
-These packages are usually used to publish our works to IEEE conferences or journals.
+This is a template for IEEE conferences.
+It includes a brief description of some input files useful to write articles for conferences or journals.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -99,10 +99,26 @@ Keyword 1, Keyword 2, \dots, Keyword N.
 \section{Introduction}\label{introduction}
 This template is intended to ease some workload related to the formatting, debugging, writing, as well as to ensure a professional and good-looking article. 
 It is intended mainly for IEEE conferences.
-However, the packages and macros can be included in other journal templates.
+However, the input files, packages and macros can be included in other journal templates.
 
 This template is available in a public repository in GitHub (\href{https://github.com/EstebanJGC/IEEE-Conference-Template---GZ.git}{\blue{Here}}).
 Any future update will be reported there.
+
+\section{Input Files, Macros, and Packages}
+The following input files are placed before ``begin document'' latex statement as: ``\textbackslash include \{$<$\text{path to the file}$>$\}''. 
+The files to be include are:
+\begin{itemize}
+    \item \textbf{units.tex:} This will contain all the possible units that I have used so far. Example: ``\textbackslash mmsquared'' translates into \mmsquared.
+    \item \textbf{authors.tex:} Authors' information, including their affiliations.
+    \item \textbf{enics\_packages.tex:} These are great packages useful for writing manuscripts in Latex. These packages, used to prepare publications for journals, are commonly used by the research groups in \hyperlink{https://enicslabs.com/}{\blue{EnICS Labs}}.
+    If some package cause trouble within your manuscript, feel free to comment it. Remember, these are extra packages, no need to always have them. 
+    \item \textbf{macros:} It contains commands for comments, review, variables, and macros. Take a look at the file.
+    \item \textbf{glossary.tex:} Common glossary used in my publications. Note that it's good to keep consistency between your different published works.
+    \item \textbf{inputVariables.tex:} These are input variables for the article.
+    Generally, these are specific for each project.
+    Look at the file to see some examples.
+    \item \textbf{ORCIDlogo.tex:} ORCID logo with hyperlink if needed to include in journal publications
+\end{itemize}
 
 \section{Figures and Tables}
 \subsection{Figures}
@@ -149,7 +165,7 @@ Therefore, the year of publication should be taken from the journal web-page.
 Another alternative to get the .bib file is to go to the journal web-page and look for the export citation option.
 Afterwards, select BibTeX option. 
 
-\subsection{Manipulating References Format}
+\subsection{Manipulating the Bibliography Style}
 Another useful hack is to use the ``filecontents'' package to manipulate the references of your article. 
 This can help you to save a lot of space.
 You can force \textit{et al.} after one or $n$ authors. 
